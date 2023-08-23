@@ -1726,8 +1726,8 @@ export CONFIG_88XXAU = m
 
 all: modules
 
-modules:
-	$(MAKE) ARCH=$(ARCH) CROSS_COMPILE=$(CROSS_COMPILE) -C $(KSRC) M=$(shell pwd)  modules
+modules modules_install:
+	$(MAKE) ARCH=$(ARCH) CROSS_COMPILE=$(CROSS_COMPILE) -C $(KSRC) M=$(shell pwd)  $@
 	@echo "---------------------------------------------------------------------------"
 	@echo "Visit https://github.com/aircrack-ng/rtl8812au for support/reporting issues"
 	@echo "or check for newer versions (branches) of these drivers.                   "
